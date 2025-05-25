@@ -50,7 +50,7 @@ import org.antlr.runtime.tree.Tree;
 
 import com.sun.org.apache.xerces.internal.impl.xs.identity.Selector.Matcher;
 
-import sun.misc.Regexp;
+// import sun.misc.Regexp;
 
 /**
  * @author Marco

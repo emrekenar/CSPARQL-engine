@@ -3,9 +3,12 @@ Changes:
 2. jena versions changed from 2.13.0 to 3.16.0  
 3. `com.hp.hpl.jena.` changed to `org.apache.jena.` globally  
 4. in old_parser/TreeBox.java unused import commented out // import sun.misc.Regexp;  
+5. timestamp bug fixed  
+6. in csparql-sparql-jena/pom.xml unused gson dependency commented out to avoid clash  
 
 Usage: Run `mvn install` on root with Java 11, use `csparql-ui-0.9.7-jar-with-dependencies.jar` in dependencies.  
-
+mvn install  
+cp csparql-ui/target/csparql-ui-0.9.7-jar-with-dependencies.jar ../SemanticObjects/libs/  
 
 CSPARQL-engine
 ==============

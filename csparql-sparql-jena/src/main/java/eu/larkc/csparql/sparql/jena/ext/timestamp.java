@@ -73,17 +73,11 @@ public class timestamp extends FunctionBase3 {
 		Statement key;
 
 		if(arg2.isLiteral()){
-			String[] objectParts = arg2.asString().split("\\^\\^");
 			TypeMapper tm = TypeMapper.getInstance();
-			//			RDFDatatype d = tm.getTypeByName(objectParts[1]);
-			RDFDatatype d = null;
-			if (objectParts.length > 1) {
-				d = tm.getTypeByName(objectParts[1]);
-			} else {
-				d = XSDDatatype.XSDstring;
-			}
+			RDFDatatype d = tm.getTypeByName(arg2.getDatatypeURI());
 			Model model = ModelFactory.createDefaultModel();
-			Literal lObject = model.createTypedLiteral(objectParts[0].replaceAll("\"", ""),d);
+			Literal lObject = model.createTypedLiteral(arg2.asString(), d);
+
 			key = new StatementImpl(new ResourceImpl(arg0.asString()), new PropertyImpl(arg1.asString()), lObject); 
 
 			lObject = null;
